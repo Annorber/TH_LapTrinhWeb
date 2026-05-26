@@ -1,0 +1,482 @@
+@model TH_LTW_Buoi02.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name;
+    var originalPrice = Model.Price * 1.25m; // Mock a 20% discount original price
+}
+
+<style>
+    /* Shopee Inspired Detail Styles */
+    .shopee-breadcrumb {
+        font-size: 0.8125rem;
+        color: #555;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .shopee-breadcrumb a {
+        color: #0055aa;
+        text-decoration: none;
+    }
+    .shopee-breadcrumb a:hover {
+        color: var(--shop-orange);
+    }
+    .shopee-breadcrumb .separator {
+        color: #929292;
+        font-size: 0.7rem;
+    }
+    
+    .product-detail-card {
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+        padding: 20px;
+        border: 1px solid rgba(0,0,0,.09);
+    }
+
+    .main-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 420px;
+        border: 1px solid #f2f2f2;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 2px;
+    }
+    
+    .main-image-wrapper img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    
+    .promo-badge-66 {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background: linear-gradient(135deg, #ff007f, #ff5e00);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 800;
+        padding: 4px 8px;
+        border-radius: 4px;
+        z-index: 10;
+        border: 1px solid #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .thumbnail-scroll {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        overflow-x: auto;
+    }
+    
+    .detail-thumbnail {
+        width: 76px;
+        height: 76px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        padding: 2px;
+        background: #fff;
+        transition: border-color 0.15s;
+        flex-shrink: 0;
+        border-radius: 2px;
+    }
+    
+    .detail-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .detail-thumbnail.active {
+        border-color: var(--shop-orange);
+    }
+    
+    /* Right Side Product Info */
+    .mall-badge {
+        background: #d0011b;
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 2px 5px;
+        border-radius: 2px;
+        margin-right: 8px;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+    
+    .product-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.6rem;
+        color: #222;
+        word-wrap: break-word;
+        margin-bottom: 0;
+    }
+    
+    .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 0.875rem;
+        color: #757575;
+    }
+    
+    .rating-value {
+        color: var(--shop-orange);
+        border-bottom: 1px solid var(--shop-orange);
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    
+    .rating-stars {
+        color: var(--shop-orange);
+        display: flex;
+        gap: 2px;
+    }
+    
+    .rating-divider {
+        width: 1px;
+        height: 12px;
+        background: #dbdbdb;
+    }
+    
+    .rating-count {
+        color: #222;
+        border-bottom: 1px solid #222;
+        font-weight: 500;
+    }
+
+    .sales-count {
+        color: #222;
+    }
+    
+    /* Price section */
+    .price-box {
+        background: #fafafa;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        border-radius: 2px;
+    }
+    
+    .original-price {
+        font-size: 1rem;
+        color: #929292;
+        text-decoration: line-through;
+    }
+    
+    .discounted-price {
+        font-size: 1.875rem;
+        font-weight: 500;
+        color: var(--shop-orange);
+    }
+    
+    .discount-tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #fff;
+        background: var(--shop-orange);
+        padding: 1px 4px;
+        border-radius: 2px;
+    }
+    
+    /* Grid details */
+    .detail-row {
+        display: flex;
+        margin-bottom: 20px;
+        font-size: 0.875rem;
+        align-items: center;
+    }
+    
+    .detail-label {
+        width: 120px;
+        color: #757575;
+        flex-shrink: 0;
+    }
+    
+    .detail-value {
+        color: #222;
+        flex-grow: 1;
+    }
+    
+    /* Swatches */
+    .swatch-btn {
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.09);
+        border-radius: 2px;
+        padding: 6px 14px;
+        font-size: 0.875rem;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: border-color 0.15s, color 0.15s;
+    }
+    
+    .swatch-btn:hover {
+        border-color: var(--shop-orange);
+        color: var(--shop-orange);
+    }
+    
+    .swatch-btn.active {
+        border-color: var(--shop-orange);
+        color: var(--shop-orange);
+        background: #fff;
+        font-weight: 500;
+    }
+    
+    /* Quantity input */
+    .quantity-selector {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0,0,0,.09);
+        width: fit-content;
+        border-radius: 2px;
+    }
+    
+    .qty-btn {
+        background: #fff;
+        border: none;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: #555;
+        cursor: pointer;
+    }
+    
+    .qty-input {
+        width: 50px;
+        height: 32px;
+        border-left: 1px solid rgba(0,0,0,.09);
+        border-right: 1px solid rgba(0,0,0,.09);
+        border-top: none;
+        border-bottom: none;
+        text-align: center;
+        font-size: 0.875rem;
+        outline: none;
+    }
+    
+    /* Action Buttons */
+    .actions-row {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .btn-add-to-cart {
+        background: rgba(238, 77, 45, 0.08);
+        border: 1px solid var(--shop-orange);
+        color: var(--shop-orange);
+        padding: 12px 20px;
+        border-radius: 2px;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    
+    .btn-add-to-cart:hover {
+        background: rgba(238, 77, 45, 0.15);
+    }
+    
+    .btn-buy-now {
+        background: var(--shop-orange);
+        color: #fff;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 2px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    
+    .btn-buy-now:hover {
+        background: var(--shop-orange-hover);
+    }
+</style>
+
+<!-- Breadcrumb Navigation -->
+<div class="shopee-breadcrumb">
+    <a asp-controller="Home" asp-action="Index">Shopee</a>
+    <span class="separator">&gt;</span>
+    <a href="#">@Model.Category?.Name</a>
+    <span class="separator">&gt;</span>
+    <span class="text-muted">@Model.Name</span>
+</div>
+
+<div class="product-detail-card">
+    <div class="row g-4">
+        <!-- Left Column: Images -->
+        <div class="col-md-5">
+            <div class="main-image-wrapper">
+
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img id="mainGalleryImage" src="@Model.ImageUrl" alt="@Model.Name" />
+                }
+                else
+                {
+                    <img id="mainGalleryImage" src="" class="d-none" />
+                    <div id="galleryFallback" class="text-muted text-center">
+                        <i class="bi bi-image" style="font-size: 4rem;"></i>
+                        <p class="small mb-0">Chưa có ảnh</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Horizontal Thumbnail Slider -->
+            <div class="thumbnail-scroll">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div class="detail-thumbnail active" onclick="changeMainImage('@Model.ImageUrl', this)">
+                        <img src="@Model.ImageUrl" />
+                    </div>
+                }
+                
+                @if (Model.Images != null)
+                {
+                    foreach (var img in Model.Images)
+                    {
+                        <div class="detail-thumbnail" onclick="changeMainImage('@img.Url', this)">
+                            <img src="@img.Url" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Right Column: Product Information -->
+        <div class="col-md-7 ps-md-4">
+            <!-- Title -->
+            <div class="d-flex align-items-start">
+                <h1 class="product-title">
+                    <span class="mall-badge">Mall</span>@Model.Name
+                </h1>
+            </div>
+
+            <!-- Ratings and Sales Row -->
+            <div class="rating-row">
+                <span class="rating-value">4.9</span>
+                <div class="rating-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <div class="rating-divider"></div>
+                <div>
+                    <span class="rating-count">5,2k</span> <span class="text-muted">Đánh Giá</span>
+                </div>
+                <div class="rating-divider"></div>
+                <div>
+                    <span class="sales-count">12,8k</span> <span class="text-muted">Đã Bán</span>
+                </div>
+            </div>
+
+            <!-- Price Block -->
+            <div class="price-box">
+                <span class="original-price">₫@originalPrice.ToString("N0")</span>
+                <span class="discounted-price">₫@Model.Price.ToString("N0")</span>
+                <span class="discount-tag">20% GIẢM</span>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="detail-row">
+                <div class="detail-label">Vận Chuyển</div>
+                <div class="detail-value d-flex align-items-center gap-2">
+                    <i class="bi bi-truck text-success fs-5"></i>
+                    <span>Miễn phí vận chuyển cho đơn hàng từ ₫150.000</span>
+                </div>
+            </div>
+
+            <!-- Buyer Assurance -->
+            <div class="detail-row">
+                <div class="detail-label">An Tâm Mua Sắm</div>
+                <div class="detail-value text-muted small">
+                    <i class="bi bi-shield-check text-danger me-1"></i>
+                    Shopee Đảm Bảo • Trả hàng miễn phí 15 ngày • Chính hãng 100%
+                </div>
+            </div>
+
+
+            <!-- Quantity Selector -->
+            <div class="detail-row">
+                <div class="detail-label">Số Lượng</div>
+                <div class="detail-value d-flex align-items-center gap-3">
+                    <div class="quantity-selector">
+                        <button type="button" class="qty-btn" onclick="adjustQty(-1)">-</button>
+                        <input type="text" id="qtyInput" class="qty-input" value="1" readonly />
+                        <button type="button" class="qty-btn" onclick="adjustQty(1)">+</button>
+                    </div>
+                    <span class="text-muted small">99 sản phẩm có sẵn</span>
+                </div>
+            </div>
+
+            <!-- Actions Row -->
+            <div class="actions-row">
+                <button type="button" class="btn-add-to-cart">
+                    <i class="bi bi-cart-plus"></i>Thêm Vào Giỏ Hàng
+                </button>
+                <button type="button" class="btn-buy-now">Mua Ngay</button>
+            </div>
+
+            <!-- Admin Actions -->
+            <div class="mt-4 pt-3 border-top d-flex gap-2">
+                <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-warning"><i class="bi bi-pencil me-1"></i>Sửa (Admin)</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i>Xóa (Admin)</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeMainImage(url, element) {
+        const mainImg = document.getElementById('mainGalleryImage');
+        const fallback = document.getElementById('galleryFallback');
+        
+        if (mainImg) {
+            mainImg.src = url;
+            mainImg.classList.remove('d-none');
+        }
+        if (fallback) {
+            fallback.classList.add('d-none');
+        }
+        
+        // Remove active class from all thumbnails
+        document.querySelectorAll('.detail-thumbnail').forEach(el => el.classList.remove('active'));
+        
+        // Add active class to clicked thumbnail
+        element.classList.add('active');
+    }
+
+    function selectSwatch(button) {
+        const parent = button.parentElement;
+        parent.querySelectorAll('.swatch-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    }
+
+    function adjustQty(amount) {
+        const input = document.getElementById('qtyInput');
+        let val = parseInt(input.value) || 1;
+        val += amount;
+        if (val < 1) val = 1;
+        input.value = val;
+    }
+</script>

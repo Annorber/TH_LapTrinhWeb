@@ -1,0 +1,108 @@
+@model IEnumerable<TH_LTW_Buoi02.Models.Product>
+
+@{
+    ViewData["Title"] = "Trang Chủ";
+}
+
+<div class="hero-section text-center py-5 mb-4 text-white rounded shadow-sm" style="background: linear-gradient(135deg, #ff7337, var(--shop-orange)); border: none;">
+    <h2 class="fw-bold" style="letter-spacing: 1px;">Siêu Sale Công Nghệ</h2>
+    <p class="mb-0 text-white-50">Mua sắm cực dễ - Giao hàng cực nhanh</p>
+</div>
+
+<div class="row">
+    <!-- Product List (Left) -->
+    <div class="col-md-9">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+            @if (Model == null || !Model.Any())
+            {
+                <div class="col-12 text-center py-5 bg-white rounded border-0 shadow-sm">
+                    <p class="text-muted fs-5 mb-0">Chưa có sản phẩm nào thuộc danh mục này.</p>
+                </div>
+            }
+            else
+            {
+                foreach (var product in Model)
+                {
+                    var categoryClass = "category-badge-default";
+                    if (product.Category?.Name == "Điện thoại") categoryClass = "category-badge-phone";
+                    else if (product.Category?.Name == "Laptop") categoryClass = "category-badge-laptop";
+                    else if (product.Category?.Name == "Tai nghe" || product.Category?.Name == "Loa") categoryClass = "category-badge-audio";
+                    else if (product.Category?.Name == "Đồng hồ") categoryClass = "category-badge-watch";
+
+                    <div class="col">
+                        <a asp-controller="Product" asp-action="Display" asp-route-id="@product.Id" class="premium-card d-flex flex-column h-100 text-decoration-none text-dark bg-white">
+                            <div class="premium-card-img-wrapper" style="height: 180px;">
+                                @if (!string.IsNullOrEmpty(product.ImageUrl))
+                                {
+                                    <img src="@product.ImageUrl" alt="@product.Name" />
+                                }
+                                else
+                                {
+                                    <div class="premium-card-img-fallback">
+                                        <i class="bi bi-image" style="font-size: 2.5rem;"></i>
+                                    </div>
+                                }
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <span class="category-badge @categoryClass mb-1 align-self-start">@(product.Category?.Name ?? "Chưa phân loại")</span>
+                                <h6 class="card-title fw-semibold text-dark mb-2" style="font-size: 0.85rem; height: 2.4rem; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 1.4;">@product.Name</h6>
+                                <div class="mt-auto">
+                                    <p class="price mb-2" style="color: var(--shop-orange); font-size: 1.05rem; font-weight: 700;">₫@product.Price.ToString("N0")</p>
+                                    <button class="btn btn-shop w-100 py-1.5" style="font-size: 0.8rem; border-radius: 6px;"><i class="bi bi-cart-plus me-1"></i> Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <!-- Sidebar (Right) -->
+    <div class="col-md-3">
+        <!-- Categories Section -->
+        <div class="sidebar shadow-sm p-3 bg-white rounded border-0 mb-4">
+            <h5 class="border-bottom pb-2 fw-bold text-dark"><i class="bi bi-grid-fill me-2 text-danger"></i>DANH MỤC</h5>
+            <div class="list-group category-list-group mt-3">
+                @{
+                    var categories = ViewBag.Categories as IEnumerable<TH_LTW_Buoi02.Models.Category>;
+                    int? selectedCategoryId = ViewBag.SelectedCategoryId as int?;
+                    string allActive = !selectedCategoryId.HasValue ? "active" : "";
+                }
+                <a asp-action="Index" class="list-group-item list-group-item-action text-decoration-none py-2 px-3 @allActive">
+                    <i class="bi-grid me-2"></i>Tất cả sản phẩm
+                </a>
+                @if (categories != null)
+                {
+                    foreach (var cat in categories)
+                    {
+                        string activeClass = selectedCategoryId == cat.Id ? "active" : "";
+                        string iconClass = "bi-tag";
+                        if (cat.Name == "Điện thoại") iconClass = "bi-phone";
+                        else if (cat.Name == "Laptop") iconClass = "bi-laptop";
+                        else if (cat.Name == "Tai nghe") iconClass = "bi-headphones";
+                        else if (cat.Name == "Loa") iconClass = "bi-speaker";
+                        else if (cat.Name == "Đồng hồ") iconClass = "bi-watch";
+
+                        <a asp-action="Index" asp-route-categoryId="@cat.Id" class="list-group-item list-group-item-action text-decoration-none py-2 px-3 @activeClass">
+                            <i class="@iconClass me-2"></i>@cat.Name
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="sidebar shadow-sm p-3 bg-white rounded border-0">
+            <h5 class="border-bottom pb-2 fw-bold text-dark"><i class="bi bi-share-fill me-2 text-primary"></i>MẠNG XÃ HỘI</h5>
+            <div class="d-flex flex-column gap-2 mt-3">
+                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-facebook text-primary me-2 fs-5"></i> Facebook</a>
+                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-twitter-x text-dark me-2 fs-5"></i> Twitter</a>
+                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-instagram text-danger me-2 fs-5"></i> Instagram</a>
+                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-linkedin text-primary me-2 fs-5"></i> LinkedIn</a>
+            </div>
+            <hr class="my-3 text-muted">
+            <p class="text-muted small mb-0">Theo dõi Shop để nhận thông báo khuyến mãi mới nhất!</p>
+        </div>
+    </div>
+</div>

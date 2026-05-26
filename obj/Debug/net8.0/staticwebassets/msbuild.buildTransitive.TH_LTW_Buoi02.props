@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TH_LTW_Buoi02.props" />
+</Project>
