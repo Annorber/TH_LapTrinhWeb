@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SHOP</title>
+    <title>@ViewData["Title"] - 36TH SHOP</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -11,68 +11,111 @@
     <link rel="stylesheet" href="~/TH_LTW_Buoi02.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-shop sticky-top mb-4">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" asp-controller="Home" asp-action="Index">
-                <div class="brand-avatar me-2">
-                    <i class="bi bi-bag-fill"></i>
+    <header>
+        <!-- Top Navbar -->
+        <div class="shopee-header-top d-none d-md-block">
+            <div class="container d-flex justify-content-end align-items-center">
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-white text-decoration-none mx-2"><i class="bi bi-bell"></i> Thông báo</a>
+                    <a href="#" class="text-white text-decoration-none mx-2"><i class="bi bi-question-circle"></i> Hỗ trợ</a>
+                    <a href="#" class="text-white text-decoration-none mx-2"><i class="bi bi-globe"></i> Tiếng Việt</a>
+                    <partial name="_LoginPartial" />
                 </div>
-                SHOP
-            </a>
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="Index">Quản lý Sản Phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Categories" asp-action="Index">Quản lý Danh Mục</a></li>
-                    <li class="nav-item"><a class="nav-link" href="~/Buoi01/index.html" target="_blank">Xem Buổi 01</a></li>
-                </ul>
             </div>
         </div>
-    </nav>
+
+        <!-- Main Header -->
+        <div class="shopee-header-main">
+            <div class="container d-flex align-items-center py-2">
+                <!-- Logo -->
+                <div class="me-4">
+                    <a class="shopee-logo-text" asp-controller="Home" asp-action="Index">
+                        <i class="bi bi-bag-fill"></i> 36TH SHOP
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-grow-1 mx-4">
+                    <div class="shopee-search-bar">
+                        <input type="text" class="shopee-search-input" placeholder="Tìm kiếm sản phẩm, thương hiệu, và tên shop">
+                        <button type="button" class="shopee-search-btn"><i class="bi bi-search"></i></button>
+                    </div>
+                    <div class="mt-1" style="font-size: 12px;">
+                        <a href="#" class="text-white opacity-75 me-3">Dép</a>
+                        <a href="#" class="text-white opacity-75 me-3">Áo Phông</a>
+                        <a href="#" class="text-white opacity-75 me-3">Áo Khoác</a>
+                        <a href="#" class="text-white opacity-75 me-3">Túi Xách Nữ</a>
+                        <a href="#" class="text-white opacity-75">Quần Ống Rộng</a>
+                    </div>
+                </div>
+
+                <!-- Cart -->
+                <div class="ms-4 px-3 text-center">
+                    <a asp-controller="ShoppingCart" asp-action="Index" class="shopee-cart-icon">
+                        <i class="bi bi-cart3"></i>
+                        @* Assuming cart items count logic is added if needed *@
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container mt-4">
         <main role="main" class="pb-5">
             @RenderBody()
         </main>
     </div>
 
     <!-- Footer -->
-    <footer class="mt-5 border-top bg-white pt-5 pb-3">
+    <footer class="shopee-footer mt-5">
         <div class="container">
-            <div class="row text-center text-md-start">
-                <div class="col-md-4 mb-4">
-                    <h6 class="fw-bold text-dark mb-3">CHĂM SÓC KHÁCH HÀNG</h6>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>CHĂM SÓC KHÁCH HÀNG</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-muted small">Trung Tâm Trợ Giúp</a></li>
-                        <li><a href="#" class="text-muted small">Shop Blog</a></li>
-                        <li><a href="#" class="text-muted small">Shop Mall</a></li>
+                        <li><a href="#">Trung Tâm Trợ Giúp</a></li>
+                        <li><a href="#">36TH SHOP Blog</a></li>
+                        <li><a href="#">36TH SHOP Mall</a></li>
+                        <li><a href="#">Hướng Dẫn Mua Hàng</a></li>
+                        <li><a href="#">Chăm Sóc Khách Hàng</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h6 class="fw-bold text-dark mb-3">VỀ SHOP</h6>
+                <div class="col-md-3 mb-4">
+                    <h5>VỀ 36TH SHOP</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-muted small">Giới Thiệu</a></li>
-                        <li><a href="#" class="text-muted small">Tuyển Dụng</a></li>
-                        <li><a href="#" class="text-muted small">Điều Khoản</a></li>
+                        <li><a href="#">Giới Thiệu Về 36TH SHOP</a></li>
+                        <li><a href="#">Tuyển Dụng</a></li>
+                        <li><a href="#">Điều Khoản 36TH SHOP</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#">Chính Hãng</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h6 class="fw-bold text-dark mb-3">THANH TOÁN</h6>
-                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                        <i class="bi bi-credit-card fs-3 text-muted"></i>
-                        <i class="bi bi-wallet2 fs-3 text-muted"></i>
-                        <i class="bi bi-paypal fs-3 text-muted"></i>
+                <div class="col-md-3 mb-4">
+                    <h5>THANH TOÁN</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <div class="bg-white border rounded p-1"><i class="bi bi-credit-card fs-4 text-primary"></i></div>
+                        <div class="bg-white border rounded p-1"><i class="bi bi-cash-coin fs-4 text-success"></i></div>
+                        <div class="bg-white border rounded p-1"><i class="bi bi-wallet2 fs-4 text-info"></i></div>
+                    </div>
+                    <h5 class="mt-4">ĐƠN VỊ VẬN CHUYỂN</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <div class="bg-white border rounded p-1 text-center" style="width: 50px; font-weight: bold; font-size: 10px; color: red;">SPX</div>
+                        <div class="bg-white border rounded p-1 text-center" style="width: 50px; font-weight: bold; font-size: 10px; color: orange;">GHTK</div>
                     </div>
                 </div>
+                <div class="col-md-3 mb-4">
+                    <h5>THEO DÕI CHÚNG TÔI TRÊN</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="bi bi-facebook me-2 text-primary"></i>Facebook</a></li>
+                        <li><a href="#"><i class="bi bi-instagram me-2 text-danger"></i>Instagram</a></li>
+                        <li><a href="#"><i class="bi bi-linkedin me-2 text-primary"></i>LinkedIn</a></li>
+                    </ul>
+                </div>
             </div>
-            <hr>
-            <div class="text-center mt-3">
-                <p class="m-0 text-muted small">&copy; 2026 Shop. Tất cả các quyền được bảo lưu.</p>
+            <hr class="mt-4">
+            <div class="text-center pb-3">
+                <p class="m-0">&copy; 2026 36TH SHOP. Tất cả các quyền được bảo lưu.</p>
             </div>
         </div>
     </footer>

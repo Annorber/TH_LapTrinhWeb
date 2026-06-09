@@ -11,12 +11,14 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly IProductRepository _productRepository;
     private readonly ICategoryRepository _categoryRepository;
+    private readonly IBannerRepository _bannerRepository;
 
-    public HomeController(ILogger<HomeController> logger, IProductRepository productRepository, ICategoryRepository categoryRepository)
+    public HomeController(ILogger<HomeController> logger, IProductRepository productRepository, ICategoryRepository categoryRepository, IBannerRepository bannerRepository)
     {
         _logger = logger;
         _productRepository = productRepository;
         _categoryRepository = categoryRepository;
+        _bannerRepository = bannerRepository;
     }
 
     public async Task<IActionResult> Index(int? categoryId)
@@ -28,7 +30,18 @@ public class HomeController : Controller
             ViewBag.SelectedCategoryId = categoryId.Value;
         }
         ViewBag.Categories = await _categoryRepository.GetAllAsync();
+        ViewBag.Banners = await _bannerRepository.GetAllAsync();
         return View(products);
+    }
+
+    public async Task<IActionResult> Display(int id)
+    {
+        var product = await _productRepository.GetByIdAsync(id);
+        if (product == null)
+        {
+            return NotFound();
+        }
+        return View(product);
     }
 
     public IActionResult Privacy()

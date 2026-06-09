@@ -1,0 +1,27 @@
+@model TH_LTW_Buoi02.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Cấp Quyền Người Dùng";
+}
+
+<div class="container mt-4 mb-5 pb-5">
+    <h2>Cấp Quyền Cho Người Dùng</h2>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <form asp-action="Edit" method="post" class="p-4 bg-white rounded shadow-sm">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Tài khoản</label>
+                    <input type="text" class="form-control" value="@Model.Email" readonly />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-danger">Chọn Quyền Mới</label>
+                    <select name="newRole" class="form-select" asp-items="@ViewBag.Roles">
+                        <option value="@ViewBag.CurrentRole" selected>@ViewBag.CurrentRole (Hiện tại)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Lưu Thay Đổi</button>
+                <a asp-action="Index" class="btn btn-secondary mt-2 ms-2">Quay Lại</a>
+            </form>
+        </div>
+    </div>
+</div>

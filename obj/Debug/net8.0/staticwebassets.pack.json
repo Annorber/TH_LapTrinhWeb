@@ -1,367 +1,387 @@
 {
   "Files": [
     {
-      "Id": "M:\\TH_LTW_Buoi02\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TH_LTW_Buoi02.bundle.scp.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TH_LTW_Buoi02.bundle.scp.css",
       "PackagePath": "staticwebassets\\TH_LTW_Buoi02.bundle.scp.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\css\\site.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\css\\style.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\favicon.ico",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152357.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152357.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152357.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152656.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152656.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152656.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152700.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152700.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152700.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152704.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152704.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152704.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152812.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152812.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152812.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152816.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152816.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152816.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152824.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152824.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152824.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152837.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152837.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152837.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152906.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152906.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152906.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152909.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152909.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152909.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152914.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152914.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152914.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152917.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152917.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152917.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152922.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152922.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152922.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 152957.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 152957.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 152957.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153000.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153000.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153000.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153002.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153002.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153002.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153036.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153036.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153036.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153043.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153043.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153043.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153047.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153047.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153047.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153125.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153125 - Copy.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153125 - Copy.png"
+    },
+    {
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153125.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153125.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153131.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153128 - Copy.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153128 - Copy.png"
+    },
+    {
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153131 - Copy.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153131 - Copy.png"
+    },
+    {
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153131.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153131.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153133.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153133 - Copy.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153133 - Copy.png"
+    },
+    {
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153133.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153133.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\Screenshot 2026-05-26 153147.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153147 - Copy.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153147 - Copy.png"
+    },
+    {
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\Screenshot 2026-05-26 153147.png",
       "PackagePath": "staticwebassets\\images\\Screenshot 2026-05-26 153147.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\airpods_pro.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\airpods_pro.png",
       "PackagePath": "staticwebassets\\images\\airpods_pro.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\apple_watch_ultra.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\apple_watch_ultra.png",
       "PackagePath": "staticwebassets\\images\\apple_watch_ultra.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\iphone_15_pro.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\iphone_15_pro.png",
       "PackagePath": "staticwebassets\\images\\iphone_15_pro.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\marshall_speaker.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\marshall_speaker.png",
       "PackagePath": "staticwebassets\\images\\marshall_speaker.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\samsung_s24_ultra.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\samsung_s24_ultra.png",
       "PackagePath": "staticwebassets\\images\\samsung_s24_ultra.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\images\\sony_headphones.png",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\images\\sony_headphones.png",
       "PackagePath": "staticwebassets\\images\\sony_headphones.png"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\js\\site.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "M:\\TH_LTW_Buoi02\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "M:\\TH_LTW_lab05\\TH_LapTrinhWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

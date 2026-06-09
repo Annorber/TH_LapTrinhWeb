@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace TH_LTW_Buoi02.Models
 {
@@ -11,6 +12,35 @@ namespace TH_LTW_Buoi02.Models
     {
         public static async Task Initialize(IServiceProvider serviceProvider)
         {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+            if (!roleManager.Roles.Any())
+            {
+                await roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
+                await roleManager.CreateAsync(new IdentityRole(SD.Role_Customer));
+                await roleManager.CreateAsync(new IdentityRole(SD.Role_Company));
+                await roleManager.CreateAsync(new IdentityRole(SD.Role_Employee));
+            }
+
+            var adminEmail = "dohuyan.dmcl@gmail.com";
+            if (await userManager.FindByEmailAsync(adminEmail) == null)
+            {
+                var adminUser = new ApplicationUser
+                {
+                    UserName = adminEmail,
+                    Email = adminEmail,
+                    FullName = "Quản Trị Viên",
+                    EmailConfirmed = true
+                };
+
+                var result = await userManager.CreateAsync(adminUser, "Dohuyan@1234");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(adminUser, SD.Role_Admin);
+                }
+            }
+
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {

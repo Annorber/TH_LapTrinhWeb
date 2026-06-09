@@ -1,0 +1,39 @@
+@model IEnumerable<TH_LTW_Buoi02.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Quản lý Người Dùng";
+}
+
+<div class="container mt-4">
+    <h2>Quản lý Phân Quyền Người Dùng</h2>
+    <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Họ Tên</th>
+                <th>Email</th>
+                <th>Quyền Hiện Tại</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @{
+                            var roles = ViewBag.UserRoles as Dictionary<string, IList<string>>;
+                            if(roles != null && roles.ContainsKey(user.Id))
+                            {
+                                @string.Join(", ", roles[user.Id])
+                            }
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm">Cấp Quyền</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

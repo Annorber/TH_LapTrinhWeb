@@ -4,105 +4,118 @@
     ViewData["Title"] = "Trang Chủ";
 }
 
-<div class="hero-section text-center py-5 mb-4 text-white rounded shadow-sm" style="background: linear-gradient(135deg, #ff7337, var(--shop-orange)); border: none;">
-    <h2 class="fw-bold" style="letter-spacing: 1px;">Siêu Sale Công Nghệ</h2>
-    <p class="mb-0 text-white-50">Mua sắm cực dễ - Giao hàng cực nhanh</p>
-</div>
-
-<div class="row">
-    <!-- Product List (Left) -->
-    <div class="col-md-9">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-            @if (Model == null || !Model.Any())
+<!-- Banner Carousel -->
+<div id="shopeeBanner" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner" style="border-radius: var(--shopee-radius);">
+        @{
+            var banners = ViewBag.Banners as IEnumerable<TH_LTW_Buoi02.Models.Banner>;
+            var first = true;
+            if (banners != null && banners.Any())
             {
-                <div class="col-12 text-center py-5 bg-white rounded border-0 shadow-sm">
-                    <p class="text-muted fs-5 mb-0">Chưa có sản phẩm nào thuộc danh mục này.</p>
-                </div>
+                foreach (var banner in banners)
+                {
+                    <div class="carousel-item @(first ? "active" : "")">
+                        @if(!string.IsNullOrEmpty(banner.Link))
+                        {
+                            <a href="@banner.Link">
+                                <img src="@banner.ImageUrl" class="d-block w-100" style="height: 350px; object-fit: contain; background-color: #f4f6f9;" alt="@banner.Title">
+                            </a>
+                        }
+                        else
+                        {
+                            <img src="@banner.ImageUrl" class="d-block w-100" style="height: 350px; object-fit: contain; background-color: #f4f6f9;" alt="@banner.Title">
+                        }
+                    </div>
+                    first = false;
+                }
             }
             else
             {
-                foreach (var product in Model)
-                {
-                    var categoryClass = "category-badge-default";
-                    if (product.Category?.Name == "Điện thoại") categoryClass = "category-badge-phone";
-                    else if (product.Category?.Name == "Laptop") categoryClass = "category-badge-laptop";
-                    else if (product.Category?.Name == "Tai nghe" || product.Category?.Name == "Loa") categoryClass = "category-badge-audio";
-                    else if (product.Category?.Name == "Đồng hồ") categoryClass = "category-badge-watch";
-
-                    <div class="col">
-                        <a asp-controller="Product" asp-action="Display" asp-route-id="@product.Id" class="premium-card d-flex flex-column h-100 text-decoration-none text-dark bg-white">
-                            <div class="premium-card-img-wrapper" style="height: 180px;">
-                                @if (!string.IsNullOrEmpty(product.ImageUrl))
-                                {
-                                    <img src="@product.ImageUrl" alt="@product.Name" />
-                                }
-                                else
-                                {
-                                    <div class="premium-card-img-fallback">
-                                        <i class="bi bi-image" style="font-size: 2.5rem;"></i>
-                                    </div>
-                                }
-                            </div>
-                            <div class="card-body p-3 d-flex flex-column">
-                                <span class="category-badge @categoryClass mb-1 align-self-start">@(product.Category?.Name ?? "Chưa phân loại")</span>
-                                <h6 class="card-title fw-semibold text-dark mb-2" style="font-size: 0.85rem; height: 2.4rem; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 1.4;">@product.Name</h6>
-                                <div class="mt-auto">
-                                    <p class="price mb-2" style="color: var(--shop-orange); font-size: 1.05rem; font-weight: 700;">₫@product.Price.ToString("N0")</p>
-                                    <button class="btn btn-shop w-100 py-1.5" style="font-size: 0.8rem; border-radius: 6px;"><i class="bi bi-cart-plus me-1"></i> Thêm vào giỏ</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                }
+                <div class="carousel-item active">
+                    <img src="https://cf.shopee.vn/file/vn-50009109-1a4cc2f00d8b4e7e9be1c54bb883b276" class="d-block w-100" style="height: 350px; object-fit: contain; background-color: #f4f6f9;" alt="Banner 1">
+                </div>
             }
-        </div>
+        }
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#shopeeBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#shopeeBanner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
-    <!-- Sidebar (Right) -->
-    <div class="col-md-3">
-        <!-- Categories Section -->
-        <div class="sidebar shadow-sm p-3 bg-white rounded border-0 mb-4">
-            <h5 class="border-bottom pb-2 fw-bold text-dark"><i class="bi bi-grid-fill me-2 text-danger"></i>DANH MỤC</h5>
-            <div class="list-group category-list-group mt-3">
-                @{
-                    var categories = ViewBag.Categories as IEnumerable<TH_LTW_Buoi02.Models.Category>;
-                    int? selectedCategoryId = ViewBag.SelectedCategoryId as int?;
-                    string allActive = !selectedCategoryId.HasValue ? "active" : "";
-                }
-                <a asp-action="Index" class="list-group-item list-group-item-action text-decoration-none py-2 px-3 @allActive">
-                    <i class="bi-grid me-2"></i>Tất cả sản phẩm
-                </a>
-                @if (categories != null)
-                {
-                    foreach (var cat in categories)
+<!-- Categories Grid -->
+<div class="shopee-category-container shadow-sm p-0 mb-4 bg-white mt-4">
+    <div class="shopee-category-header p-3 mb-0 border-bottom text-muted" style="font-size: 16px;">DANH MỤC</div>
+    <div class="d-flex overflow-auto" style="white-space: nowrap;">
+        @{
+            var categories = ViewBag.Categories as IEnumerable<TH_LTW_Buoi02.Models.Category>;
+        }
+        @if (categories != null)
+        {
+            foreach (var cat in categories)
+            {
+                <div style="width: 120px; flex-shrink: 0;" class="border-end border-bottom">
+                    <a asp-action="Index" asp-route-categoryId="@cat.Id" class="shopee-category-item text-dark text-decoration-none d-flex flex-column align-items-center p-3 h-100" style="border: none;">
+                        <div style="width: 70px; height: 70px; background-color: #f8f9fa; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                            @{
+                                var catImg = !string.IsNullOrEmpty(cat.ImageUrl) ? cat.ImageUrl : "https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn";
+                            }
+                            <img src="@catImg" style="width: 50px; height: 50px; object-fit: contain;" alt="@cat.Name" onerror="this.src='https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn';" />
+                        </div>
+                        <span style="font-size: 14px; text-align: center; white-space: normal; line-height: 1.2; font-weight: 400;">@cat.Name</span>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<!-- Daily Discover -->
+<div class="shopee-daily-discover sticky-top" style="top: 100px; z-index: 10;">
+    GỢI Ý HÔM NAY
+</div>
+
+<div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-2 mb-4">
+    @if (Model == null || !Model.Any())
+    {
+        <div class="col-12 text-center py-5 w-100">
+            <p class="text-muted">Chưa có sản phẩm nào.</p>
+        </div>
+    }
+    else
+    {
+        foreach (var product in Model)
+        {
+            <div class="col">
+                <a asp-controller="Home" asp-action="Display" asp-route-id="@product.Id" class="shopee-product-card text-decoration-none text-dark">
+                    @if (!string.IsNullOrEmpty(product.ImageUrl))
                     {
-                        string activeClass = selectedCategoryId == cat.Id ? "active" : "";
-                        string iconClass = "bi-tag";
-                        if (cat.Name == "Điện thoại") iconClass = "bi-phone";
-                        else if (cat.Name == "Laptop") iconClass = "bi-laptop";
-                        else if (cat.Name == "Tai nghe") iconClass = "bi-headphones";
-                        else if (cat.Name == "Loa") iconClass = "bi-speaker";
-                        else if (cat.Name == "Đồng hồ") iconClass = "bi-watch";
-
-                        <a asp-action="Index" asp-route-categoryId="@cat.Id" class="list-group-item list-group-item-action text-decoration-none py-2 px-3 @activeClass">
-                            <i class="@iconClass me-2"></i>@cat.Name
-                        </a>
+                        <img src="@product.ImageUrl" class="shopee-product-img" alt="@product.Name" />
                     }
-                }
+                    else
+                    {
+                        <div class="shopee-product-img d-flex align-items-center justify-content-center bg-light text-muted">
+                            <i class="bi bi-image" style="font-size: 2.5rem;"></i>
+                        </div>
+                    }
+                    
+                    <div class="shopee-product-info">
+                        <div class="shopee-product-title">@product.Name</div>
+                        <div class="d-flex justify-content-between align-items-end mt-2">
+                            <div class="shopee-product-price">₫@product.Price.ToString("N0")</div>
+                            <div class="text-muted" style="font-size: 10px; margin-bottom: 3px;">Đã bán 1,2k</div>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </div>
+        }
+    }
+</div>
 
-        <!-- Social Media Section -->
-        <div class="sidebar shadow-sm p-3 bg-white rounded border-0">
-            <h5 class="border-bottom pb-2 fw-bold text-dark"><i class="bi bi-share-fill me-2 text-primary"></i>MẠNG XÃ HỘI</h5>
-            <div class="d-flex flex-column gap-2 mt-3">
-                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-facebook text-primary me-2 fs-5"></i> Facebook</a>
-                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-twitter-x text-dark me-2 fs-5"></i> Twitter</a>
-                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-instagram text-danger me-2 fs-5"></i> Instagram</a>
-                <a href="#" class="social-link text-decoration-none text-dark d-flex align-items-center py-1"><i class="bi bi-linkedin text-primary me-2 fs-5"></i> LinkedIn</a>
-            </div>
-            <hr class="my-3 text-muted">
-            <p class="text-muted small mb-0">Theo dõi Shop để nhận thông báo khuyến mãi mới nhất!</p>
-        </div>
-    </div>
+<div class="text-center mb-5">
+    <button class="shopee-btn-outline-orange px-5 py-2">Xem Thêm</button>
 </div>

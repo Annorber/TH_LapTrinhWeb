@@ -1,0 +1,28 @@
+@using Microsoft.AspNetCore.Identity
+@using TH_LTW_Buoi02.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="d-flex align-items-center">
+        @if (User.IsInRole(SD.Role_Admin))
+        {
+            <a href="/Admin/Banner" class="text-warning text-decoration-none mx-2 fw-bold" style="font-size: 13px;"><i class="bi bi-gear-fill"></i> VÀO TRANG QUẢN TRỊ</a>
+            <span class="text-white opacity-50 mx-1">|</span>
+        }
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Quản lý" class="text-white text-decoration-none mx-2" style="font-size: 13px;">Xin chào @UserManager.GetUserName(User)!</a>
+        <span class="text-white opacity-50 mx-1">|</span>
+        <form class="m-0 p-0 d-flex align-items-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="text-white mx-2" style="border: none; background: none; padding: 0; font-size: 13px;">Đăng xuất</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="d-flex align-items-center">
+        <a asp-area="Identity" asp-page="/Account/Register" class="text-white text-decoration-none mx-2" style="font-size: 13px;">Đăng ký</a>
+        <span class="text-white opacity-50 mx-1">|</span>
+        <a asp-area="Identity" asp-page="/Account/Login" class="text-white text-decoration-none mx-2" style="font-size: 13px;">Đăng nhập</a>
+    </div>
+}

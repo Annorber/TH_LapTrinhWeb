@@ -1,0 +1,120 @@
+@model IEnumerable<TH_LTW_Buoi02.Models.Order>
+@{
+    ViewData["Title"] = "Quản Lý Đơn Hàng";
+    Layout = "_AdminLayout";
+    var currentStatus = ViewBag.CurrentStatus as string ?? "Tất cả";
+    var statusTabs = new List<string> { "Tất cả", "Chờ xử lý", "Đang giao", "Đã hoàn thành", "Đã hủy" };
+}
+
+@functions {
+    public string GetStatusBadgeClass(string status) {
+        switch (status) {
+            case "Chờ xử lý": return "bg-warning text-dark";
+            case "Đang giao": return "bg-info text-white";
+            case "Đã hoàn thành": return "bg-success text-white";
+            case "Đã hủy": return "bg-danger text-white";
+            default: return "bg-secondary text-white";
+        }
+    }
+}
+
+<div class="mb-4">
+    <!-- Status Filter Tabs -->
+    <div class="bg-white rounded shadow-sm border p-2 mb-4 d-flex gap-2 flex-wrap">
+        @foreach (var tab in statusTabs)
+        {
+            <a href="?status=@tab" 
+               class="btn btn-sm px-4 py-2 text-decoration-none rounded fw-semibold transition-all @(currentStatus == tab ? "btn-premium-primary text-white" : "btn-light text-muted border")"
+               style="font-size: 13.5px;">
+               @tab
+            </a>
+        }
+    </div>
+
+    <!-- Orders Table Box -->
+    <div class="premium-table-card shadow-sm border rounded bg-white">
+        <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+            <h5 class="m-0 fw-bold text-dark"><i class="bi bi-list-ul me-2"></i>Danh Sách Đơn Hàng</h5>
+            <span class="badge bg-light text-dark border p-2" style="font-size: 13px;">Hiển thị: <strong>@Model.Count() đơn hàng</strong></span>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table premium-table m-0 align-middle">
+                <thead>
+                    <tr>
+                        <th>Mã Đơn</th>
+                        <th>Khách Hàng</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Ngày Đặt</th>
+                        <th>Thanh Toán</th>
+                        <th class="text-end">Tổng Tiền</th>
+                        <th class="text-center">Trạng Thái</th>
+                        <th class="text-center">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var order in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge-id">#@order.Id</span>
+                                </td>
+                                <td class="fw-semibold text-dark">
+                                    @order.CustomerName
+                                </td>
+                                <td>
+                                    <i class="bi bi-telephone text-muted me-1 small"></i>@order.PhoneNumber
+                                </td>
+                                <td class="text-muted small">
+                                    @order.OrderDate.ToString("dd/MM/yyyy HH:mm")
+                                </td>
+                                <td>
+                                    @if (order.PaymentMethod == "Chuyển khoản")
+                                    {
+                                        <span class="badge bg-light text-primary border border-primary-subtle" style="font-size: 11px;"><i class="bi bi-qr-code-scan me-1"></i> QR Chuyển khoản</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-light text-success border border-success-subtle" style="font-size: 11px;"><i class="bi bi-cash me-1"></i> Tiền mặt (COD)</span>
+                                    }
+                                </td>
+                                <td class="text-end fw-bold text-danger">
+                                    ₫@order.TotalPrice.ToString("N0")
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge @GetStatusBadgeClass(order.OrderStatus) py-2 px-3 fw-semibold" style="font-size: 12px; border-radius: 30px;">
+                                        @order.OrderStatus
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <a asp-action="Detail" asp-route-id="@order.Id" class="btn btn-action btn-action-view">
+                                            <i class="bi bi-eye"></i> Xem Chi Tiết
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center py-5 text-muted">
+                                <i class="bi bi-inbox fs-1 d-block mb-3 opacity-50"></i>
+                                Không tìm thấy đơn hàng nào ở trạng thái này.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .transition-all {
+        transition: all 0.2s ease;
+    }
+</style>

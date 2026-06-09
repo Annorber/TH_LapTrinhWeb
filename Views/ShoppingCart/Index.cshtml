@@ -1,0 +1,75 @@
+@model ShoppingCart
+@{
+    ViewData["Title"] = "Giỏ Hàng";
+}
+
+<div class="mb-5 pb-5">
+    <!-- Header -->
+    <div class="bg-white p-3 mb-3 rounded shadow-sm d-flex align-items-center text-muted" style="font-size: 14px;">
+        <div style="width: 50%;"><input type="checkbox" class="form-check-input me-3" checked> Sản Phẩm</div>
+        <div style="width: 15%; text-align: center;">Đơn Giá</div>
+        <div style="width: 15%; text-align: center;">Số Lượng</div>
+        <div style="width: 10%; text-align: center;">Số Tiền</div>
+        <div style="width: 10%; text-align: center;">Thao Tác</div>
+    </div>
+
+    @if (Model.Items.Count > 0)
+    {
+        <div class="bg-white rounded shadow-sm mb-4">
+            @foreach (var item in Model.Items)
+            {
+                <div class="p-3 border-bottom d-flex align-items-center" style="font-size: 14px;">
+                    <div style="width: 50%;" class="d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input me-3" checked>
+                        <div class="border rounded me-3" style="width: 80px; height: 80px; overflow: hidden; flex-shrink: 0;">
+                            <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn" : item.ImageUrl)" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn';"/>
+                        </div>
+                        <div class="pe-3">
+                            <a href="#" class="text-dark text-decoration-none" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">@item.Name</a>
+                            <div class="text-muted mt-1" style="font-size: 12px;">Phân loại: Mặc định</div>
+                        </div>
+                    </div>
+                    
+                    <div style="width: 15%; text-align: center;">₫@item.Price.ToString("N0")</div>
+                    
+                    <div style="width: 15%; text-align: center;">
+                        <div class="d-flex align-items-center border rounded mx-auto" style="width: 100px; height: 32px; overflow: hidden; border-color: #dee2e6 !important;">
+                            <button class="btn btn-light border-0 px-2 py-0 h-100 fw-bold d-flex align-items-center justify-content-center" type="button" style="border-radius: 0; font-size: 14px; min-width: 28px; background-color: #f8f9fa;" onclick="if(parseInt(this.nextElementSibling.value) > 1) { window.location.href='@Url.Action("AddToCart", "ShoppingCart", new { productId = item.ProductId, quantity = -1 })'; }">-</button>
+                            <input type="text" class="form-control text-center border-0 p-0 h-100 bg-white" value="@item.Quantity" readonly style="box-shadow: none; border-radius: 0; font-size: 13px; font-weight: 500;">
+                            <button class="btn btn-light border-0 px-2 py-0 h-100 fw-bold d-flex align-items-center justify-content-center" type="button" style="border-radius: 0; font-size: 14px; min-width: 28px; background-color: #f8f9fa;" onclick="window.location.href='@Url.Action("AddToCart", "ShoppingCart", new { productId = item.ProductId, quantity = 1 })'">+</button>
+                        </div>
+                    </div>
+                    
+                    <div style="width: 10%; text-align: center; color: var(--shopee-orange);">₫@( (item.Price * item.Quantity).ToString("N0") )</div>
+                    
+                    <div style="width: 10%; text-align: center;">
+                        <a asp-action="RemoveFromCart" asp-route-productId="@item.ProductId" class="text-dark text-decoration-none">Xóa</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Sticky Checkout Bar -->
+        <div class="bg-white p-3 rounded shadow-sm sticky-bottom d-flex justify-content-between align-items-center border-top border-2" style="bottom: 0; z-index: 100; border-color: var(--shopee-orange) !important;">
+            <div class="d-flex align-items-center">
+                <input type="checkbox" class="form-check-input me-3" checked>
+                <span class="text-muted">Chọn Tất Cả (@Model.Items.Count)</span>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <div class="me-4 text-end">
+                    <div style="font-size: 16px;">Tổng thanh toán (@Model.Items.Count Sản phẩm): <span style="color: var(--shopee-orange); font-size: 24px; font-weight: 500;">₫@Model.Items.Sum(i => i.Price * i.Quantity).ToString("N0")</span></div>
+                </div>
+                <a asp-action="Checkout" class="shopee-btn-solid-orange py-2 px-5 fs-5">Mua Hàng</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="bg-white p-5 rounded shadow-sm text-center">
+            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f4.png" alt="Empty Cart" style="width: 150px; opacity: 0.8;" class="mb-3"/>
+            <p class="text-muted mb-4">Giỏ hàng của bạn còn trống</p>
+            <a asp-controller="Home" asp-action="Index" class="shopee-btn-solid-orange py-2 px-4">MUA NGAY</a>
+        </div>
+    }
+</div>

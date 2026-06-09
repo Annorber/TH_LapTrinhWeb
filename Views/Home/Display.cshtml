@@ -1,0 +1,91 @@
+@model TH_LTW_Buoi02.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="bg-white p-4 rounded shadow-sm">
+    <div class="row">
+        <!-- Product Images -->
+        <div class="col-md-5">
+            <div class="border rounded mb-3 p-2">
+                <img src="@Model.ImageUrl" class="w-100" alt="@Model.Name" onerror="this.src='https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn';"/>
+            </div>
+            <!-- Thumbnails if any -->
+            <div class="d-flex flex-wrap gap-2">
+                @if(Model.Images != null && Model.Images.Any()) {
+                    foreach(var img in Model.Images) {
+                        <div class="border rounded p-1" style="width: 80px; height: 80px;">
+                            <img src="@img.Url" class="w-100 h-100" style="object-fit: cover;" onerror="this.src='https://cf.shopee.vn/file/687f3967b7c2fe6a134a2c11894eea4b_tn';" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-md-7 ps-md-4">
+            <h4 class="fw-bold mb-3">@Model.Name</h4>
+            
+            <div class="d-flex align-items-center mb-3">
+                <div class="text-warning me-2" style="font-size: 13px;">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                </div>
+                <span class="text-muted border-start ps-2" style="font-size: 14px;">4.9 Đánh Giá</span>
+                <span class="text-muted border-start ps-2 ms-2" style="font-size: 14px;">1,2k Đã bán</span>
+            </div>
+
+            <div class="bg-light p-3 mb-4 rounded d-flex align-items-center">
+                <h2 class="fw-bold m-0" style="color: var(--shopee-orange);">₫@Model.Price.ToString("N0")</h2>
+                <div class="ms-3 badge bg-danger text-white">Rẻ vô địch</div>
+            </div>
+
+            <div class="mb-4">
+                <div class="d-flex">
+                    <span class="text-muted me-4" style="min-width: 100px;">Vận Chuyển</span>
+                    <div>
+                        <div class="mb-1"><i class="bi bi-truck text-success"></i> Miễn phí vận chuyển</div>
+                        <div class="text-muted" style="font-size: 13px;"><i class="bi bi-info-circle me-1"></i> Miễn phí vận chuyển cho đơn hàng trên ₫50.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <form asp-controller="ShoppingCart" asp-action="AddToCart" method="post" class="mb-4 d-flex align-items-center">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <div class="d-flex align-items-center border rounded" style="width: 120px; height: 38px; overflow: hidden; border-color: #dee2e6 !important;">
+                    <button class="btn btn-light border-0 px-3 py-0 h-100 fw-bold d-flex align-items-center justify-content-center" type="button" style="border-radius: 0; font-size: 16px; min-width: 35px; background-color: #f8f9fa;" onclick="this.nextElementSibling.value = Math.max(1, parseInt(this.nextElementSibling.value) - 1)">-</button>
+                    <input type="number" name="quantity" class="form-control text-center border-0 p-0 h-100 bg-white" value="1" min="1" max="899" readonly style="box-shadow: none; border-radius: 0; font-size: 15px; -moz-appearance: textfield; font-weight: 500;">
+                    <button class="btn btn-light border-0 px-3 py-0 h-100 fw-bold d-flex align-items-center justify-content-center" type="button" style="border-radius: 0; font-size: 16px; min-width: 35px; background-color: #f8f9fa;" onclick="this.previousElementSibling.value = parseInt(this.previousElementSibling.value) + 1">+</button>
+                </div>
+                <span class="text-muted ms-3" style="font-size: 13px;">899 sản phẩm có sẵn</span>
+                
+                <div class="w-100 mt-4 d-flex gap-3">
+                    <button type="submit" class="shopee-btn-outline-orange d-flex align-items-center justify-content-center" style="width: 200px;">
+                        <i class="bi bi-cart-plus me-2 fs-5"></i> Thêm Vào Giỏ Hàng
+                    </button>
+                    <button type="submit" class="shopee-btn-solid-orange d-flex align-items-center justify-content-center" style="width: 150px;">
+                        Mua Ngay
+                    </button>
+                </div>
+            </form>
+            
+            <hr class="my-4">
+            
+            <div class="d-flex align-items-center gap-4 text-muted" style="font-size: 14px;">
+                <div class="d-flex align-items-center"><i class="bi bi-shield-check text-success fs-5 me-2"></i> 36TH SHOP Đảm Bảo</div>
+                <div>3 Ngày Trả Hàng / Hoàn Tiền</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white p-4 rounded shadow-sm mt-4 mb-5">
+    <h5 class="bg-light p-3 rounded text-uppercase fw-bold" style="font-size: 16px;">Chi Tiết Sản Phẩm</h5>
+    <div class="p-3" style="font-size: 14px; line-height: 1.8;">
+        <p>@Model.Description</p>
+    </div>
+</div>
